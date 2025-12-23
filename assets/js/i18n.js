@@ -191,7 +191,7 @@
       "page.title": "CPK Protection Toolkit",
       "lang.label": "语言",
       "site.title": "CPK Protection Toolkit",
-      "site.tagline": "市面上最先进、最快、最安全的 CPK 保护工具<br />。",
+      "site.tagline": "市面上最先进、最快、最安全的 CPK 保护工具。",
       "nav.products": "产品",
       "nav.demo": "演示",
       "nav.pricing": "价格",
@@ -363,3 +363,4 @@
     setLanguage(saved || preferred);
   });
 })();
+
