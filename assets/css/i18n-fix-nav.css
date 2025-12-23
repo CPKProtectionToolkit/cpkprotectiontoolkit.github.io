@@ -1,37 +1,49 @@
-/* Fix B: prevent long translated nav labels from colliding with dividers/lines */
-#header nav ul li {
-  /* Ensure flex items can shrink without forcing overflow */
-  min-width: 0;
-}
+/* ==========================================================================
+   i18n nav fix for HTML5UP Dimension
+   Fixes Spanish (and other long labels) colliding with the vertical separators.
+   This file must be loaded AFTER assets/css/main.css
+   ========================================================================== */
 
+/* 1) Make the separator "feel" farther from text by balancing padding
+      and slightly reducing tracking for all languages. */
 #header nav ul li a {
-  white-space: nowrap;
+  /* Override theme defaults that are too aggressive for long translations */
+  padding: 0 1.55rem !important;         /* balanced L/R padding */
+  letter-spacing: 0.16rem !important;    /* was 0.2rem in main.css */
+  font-size: 0.78rem !important;         /* was 0.8rem in main.css */
 
-  /* Scale typography so longer translations fit inside fixed-width nav tiles */
-  font-size: clamp(0.55rem, 1.25vw, 0.8rem);
-  letter-spacing: clamp(0.10rem, 0.45vw, 0.2rem);
-
-  /* Slightly tighter horizontal padding gives more room for text */
-  padding-left: 0.9rem;
-  padding-right: 0.9rem;
-
-  /* Avoid any accidental bleed outside the button */
-  overflow: hidden;
-  text-overflow: clip;
+  /* Defensive: ensure text never paints into neighboring li box */
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
 }
 
-/* Optional: nudge Spanish a touch tighter while keeping the label intact */
+/* 2) Spanish-specific: give each button a bit more guaranteed width,
+      and reduce tracking slightly more so DEMONSTRACIÓN fits comfortably. */
 html[lang="es"] #header nav ul li a {
-  font-size: clamp(0.52rem, 1.15vw, 0.76rem);
-  letter-spacing: clamp(0.08rem, 0.40vw, 0.18rem);
+  min-width: clamp(8.6rem, 12vw, 10.2rem) !important; /* was 7.5rem */
+  letter-spacing: 0.13rem !important;
+  font-size: 0.76rem !important;
+  padding: 0 1.65rem !important;
 }
 
-/* Extra safety on very narrow screens */
-@media (max-width: 480px) {
+/* 3) Optional: Indonesian can also run long (kept mild). */
+html[lang="id"] #header nav ul li a {
+  letter-spacing: 0.14rem !important;
+}
+
+/* 4) Small screens: the theme switches to vertical at 480px already.
+      We just keep typography sane there. */
+@media screen and (max-width: 480px) {
   #header nav ul li a {
-    font-size: clamp(0.50rem, 3.2vw, 0.72rem);
-    letter-spacing: clamp(0.06rem, 1.1vw, 0.16rem);
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    font-size: 0.80rem !important;
+    letter-spacing: 0.14rem !important;
+    padding: 0 1.25rem !important;
+    white-space: normal !important; /* safe when stacked */
+  }
+
+  html[lang="es"] #header nav ul li a {
+    min-width: 0 !important; /* theme sets width:100% in stacked mode */
+    padding: 0 1.25rem !important;
   }
 }
