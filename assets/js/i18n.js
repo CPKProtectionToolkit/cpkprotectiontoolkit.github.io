@@ -24,27 +24,6 @@
       "sections.pricing": "Pricing and Licensing",
       "sections.contact": "Contact",
 
-      "products.cpkpt.tagline": "<span style=\"font-family:'Segoe UI Symbol'; color:#00b050\">✅</span> <span style=\"font-weight:bold\">Fast. Secure. Bloatware-free. Malware-free.</span>",
-      "products.cpkpt.intro": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> If you're interested to protect your CPK files from unauthorized access, this is the tool for you <span style=\"font-family:'Segoe UI Emoji'; color:#ff0000\">❗️</span>",
-      "products.cpkpt.benefitsIntro": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> Key advantages include:",
-      "products.cpkpt.b1": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> Blazing fast speeds while processing files",
-      "products.cpkpt.b2": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> Unlimited filesize",
-      "products.cpkpt.b3": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> More secure <i>(i've bypassed and unlocked every locked cpk i found on the internet thus i know how to protect mine better - if you need proof check <b>ULTIMATE CPK Unlocker</b>)</i>",
-      "products.cpkpt.b4": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> No bloatware <i>(no extra redistributables required)</i>",
-      "products.cpkpt.b5": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> High-DPI friendly—looks sharp on 1440p and 4K displays",
-
-      "products.ucu.tagline": "<span style=\"font-family:'Segoe UI Symbol'; color:#00b050\">✅</span> <span style=\"font-weight:bold\">Fast. Secure. Bloatware-free. Malware-free.</span>",
-      "products.ucu.intro": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> If you want to unlock protected CPK's, this is the right tool for you. Has 99,99% success rate on all files i did tests on. If there is a file that it fails to extract, i'm gonna adapt the tool in no time to make it compatible and extract the problematic file <span style=\"font-family:'Segoe UI Emoji'; color:#ff0000\">❗️</span>",
-      "products.ucu.licenses": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> ULTIMATE CPK Unlocker is available as a <b>perpetual (lifetime)</b> license or a <b>subscription</b> license <span style=\"font-family:'Segoe UI Emoji'; color:#ff0000\">❗️</span>",
-      "products.ucu.pricingNote": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">* For current prices, please see the Pricing section.</span>",
-
-      "products.udg.tagline": "<span style=\"font-family:'Segoe UI Symbol'; color:#00b050\">✅</span> <span style=\"font-weight:bold\">Fast. Smooth. Easy to use. Malware-free.</span>",
-      "products.udg.intro": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> Looking for an all-in-one solution for your preferred PES title? <span style=\"font-family:'Segoe UI Emoji'; color:#ff0000\">❗️</span>",
-      "products.udg.compat": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> Compatible with PES versions and DLCs from <b>Pro Evolution Soccer 2017</b> through <b>eFootball Pro Evolution Soccer 2021</b> <span style=\"font-family:'Segoe UI Emoji'\">😏</span>",
-      "products.udg.dpfile": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> Preserves KONAMI’s original <b>DpFileList.bin</b> format. Many alternative tools generate incompatible files—even if they appear to load in-game <span style=\"font-family:'Segoe UI Emoji'; color:#ff0000\">❗️</span>",
-      "products.udg.download": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> Download: <a href=\"https://github.com/CPKProtectionToolkit/udg/\" target=\"_blank\">https://github.com/CPKProtectionToolkit/udg/</a>",
-      "products.udg.free": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">* This app is FREE.</span>",
-
       "demo.cpkpt.lead": "Watch the video above to see CPK Protection Toolkit in action. For purchasing details and discounts on multiple licenses, please review the Pricing section. If you have questions, please use the <a href=\"#contact\">Contact</a> page.",
       "demo.cpkpt.moreInfo": "For additional details, use the Information button in the CPKPT menu.",
       "demo.cpkpt.download": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> Demo download: <a href=\"#\" target=\"_blank\">No demo available</a>",
