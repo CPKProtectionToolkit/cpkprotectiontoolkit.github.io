@@ -36,18 +36,20 @@
       "products.ucu.tagline": ,
       "products.ucu.intro": ,
       "products.ucu.licenses": ,
-      "products.ucu.pricingNote": ,
+      "products.ucu.note1": ,
+	  "products.ucu.note2": ,
 
       "products.udg.tagline": ,
       "products.udg.intro": ,
       "products.udg.compat": ,
       "products.udg.dpfile": ,
-      "products.udg.download": ,
-      "products.udg.free": ,
 
       "demo.cpkpt.lead": ,
       "demo.cpkpt.moreInfo": ,
       "demo.cpkpt.download": ,
+	  "demo.ucu.lead": ,
+      "demo.ucu.moreInfo": ,
+      "demo.ucu.download": ,
       "demo.udg.lead": ,
 	  "demo.udg.download": ,
 
