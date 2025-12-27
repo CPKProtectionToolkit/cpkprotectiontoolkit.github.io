@@ -29,13 +29,12 @@
       "products.cpkpt.benefitsIntro": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> Key advantages include:",
       "products.cpkpt.b1": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> Blazing fast speeds while processing files",
       "products.cpkpt.b2": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> Unlimited filesize",
-      "products.cpkpt.b3": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> More secure<i>(i've bypassed and unlocked every locked cpk i found on the internet thus i know how to protect mine better - if you need proof check <b>ULTIMATE CPK Unlocker</b>)</i>",
-      "products.cpkpt.b4": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> No bloatware (no extra redistributables required)",
+      "products.cpkpt.b3": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> More secure <i>(i've bypassed and unlocked every locked cpk i found on the internet thus i know how to protect mine better - if you need proof check <b>ULTIMATE CPK Unlocker</b>)</i>",
+      "products.cpkpt.b4": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> No bloatware <i>(no extra redistributables required)</i>",
       "products.cpkpt.b5": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> High-DPI friendly—looks sharp on 1440p and 4K displays",
 
       "products.ucu.tagline": "<span style=\"font-family:'Segoe UI Symbol'; color:#00b050\">✅</span> <span style=\"font-weight:bold\">Fast. Secure. Bloatware-free. Malware-free.</span>",
-      "products.ucu.intro": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> Need to unlock protected CPK files? This is the right tool for the job—with a very high success rate across publicly available files <span style=\"font-family:'Segoe UI Emoji'; color:#ff0000\">❗️</span>",
-      "products.ucu.note": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> ULTIMATE CPK Unlocker does <b>not</b> unlock files protected with CPK Protection Toolkit.",
+      "products.ucu.intro": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> If you want to unlock protected CPK's, this is the right tool for you. Has 99,99% success rate on all files i did tests on. If there is a file that it fails to extract, i'm gonna adapt the tool in no time to make it compatible and extract the problematic file <span style=\"font-family:'Segoe UI Emoji'; color:#ff0000\">❗️</span>",
       "products.ucu.licenses": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">👉</span> ULTIMATE CPK Unlocker is available as a <b>perpetual (lifetime)</b> license or a <b>subscription</b> license <span style=\"font-family:'Segoe UI Emoji'; color:#ff0000\">❗️</span>",
       "products.ucu.pricingNote": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">* For current prices, please see the Pricing section.</span>",
 
