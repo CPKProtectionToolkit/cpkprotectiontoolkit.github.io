@@ -47,3 +47,42 @@ html[lang="id"] #header nav ul li a {
     padding: 0 1.25rem !important;
   }
 }
+
+/* Equal-width nav buttons + true centered labels (desktop/tablet) */
+@media screen and (min-width: 481px) {
+
+  /* Make the bar a flex row */
+  #header nav ul {
+    display: flex !important;
+    width: 100%;
+    max-width: 70rem;      /* tweak if you want the whole bar narrower */
+    margin: 0 auto;
+  }
+
+  /* Force equal-width segments */
+  #header nav ul li {
+    flex: 1 1 0 !important;
+    min-width: 0 !important; /* override template min-width behavior */
+  }
+
+  /* Center label perfectly inside each segment */
+  #header nav ul li a {
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    /* keep padding symmetrical so centering is visually correct */
+    padding: 0 1.25rem !important;
+
+    /* prevent wrapping while still staying centered */
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  /* Optional: if DEMO & DOWNLOAD still feels tight, slightly reduce tracking just for it */
+  #header nav ul li a[data-i18n="nav.demo"] {
+    letter-spacing: 0.14rem !important;
+    font-size: 0.76rem !important;
+  }
+}
