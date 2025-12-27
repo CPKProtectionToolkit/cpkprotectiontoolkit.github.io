@@ -49,6 +49,7 @@
       "demo.cpkpt.moreInfo": ,
       "demo.cpkpt.download": ,
       "demo.udg.lead": ,
+	  "demo.udg.download": ,
 
       "pricing.intro": "We offer two licensing models: <b>perpetual (lifetime)</b> and <b>non-perpetual (subscription)</b>. Licenses are bound to a single computer. For use on multiple computers, please purchase a multi-license (minimum two). Multi-licenses may qualify for discounts—contact us to discuss. See the table below for current single-license prices (multi-license pricing differs).",
       "pricing.tableTitle": "Product pricing",
