@@ -80,6 +80,11 @@ html[lang="id"] #header nav ul li a {
     text-align: center !important;
   }
 
+    /* Make the 2nd button wider so the long label has space on both sides */
+  #header nav ul li:nth-child(2) {
+    flex: 1.35 1 0 !important; /* increase/decrease 1.35 to taste */
+  }
+   
   /* Optional: if DEMO & DOWNLOAD still feels tight, slightly reduce tracking just for it */
   #header nav ul li a[data-i18n="nav.demo"] {
     letter-spacing: 0.14rem !important;
