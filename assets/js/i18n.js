@@ -16,11 +16,11 @@
       "site.title": "CPK Protection Toolkit",
       "site.tagline": "The most advanced, fast, and secure CPK protection tool<br />available on the market.",
       "nav.products": "Products",
-      "nav.demo": "Demo",
+      "nav.demo": "Demo and Downloads",
       "nav.pricing": "Pricing",
       "nav.contact": "Contact",
       "sections.products": "Products",
-      "sections.demo": "Demo",
+      "sections.demo": "Demo and Downloads",
       "sections.pricing": "Pricing and Licensing",
       "sections.contact": "Contact",
 
@@ -362,4 +362,5 @@
     setLanguage(saved || preferred);
   });
 })();
+
 
