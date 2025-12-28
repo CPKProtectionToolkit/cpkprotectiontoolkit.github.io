@@ -1,29 +1,27 @@
 /* ==========================================================================
-   i18n-fix-nav.css — Option B
+   i18n-fix-nav.css — Option B (with anti-bleed fix)
    Goal: give “DEMO & DOWNLOAD” more left/right breathing room by allocating
-         it more width and taking a little from the other tabs, without
-         breaking the existing layout/separators.
+         it more width and taking a little from the other tabs.
+   Fix: clip each tab to its own <li> so hover/active fills cannot spill.
    Load AFTER assets/css/main.css
    ========================================================================== */
 
-/* Base safety: prevent anchor sizing overflow issues */
+/* Base safety */
 #header nav ul li a {
   box-sizing: border-box !important;
   white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: clip !important;
 }
 
 /* Mobile: stacked nav, allow wrapping */
 @media screen and (max-width: 480px) {
   #header nav ul li a {
     white-space: normal !important;
-    overflow: visible !important;
   }
 }
 
-/* Desktop/tablet: keep the nav as a clean flex row and center labels */
+/* Desktop/tablet */
 @media screen and (min-width: 481px) {
+
   #header nav ul {
     display: flex !important;
     width: 100%;
@@ -31,23 +29,29 @@
     margin: 0 auto;
   }
 
-  /* Each tab is a flex item */
+  /* Each tab is a flex item — IMPORTANT: clip to prevent bleed */
   #header nav ul li {
     display: flex !important;
     min-width: 0 !important;
-    flex: 1 1 0 !important; /* default; Option B overrides below */
+
+    position: relative !important;
+    overflow: hidden !important; /* <-- stops DEMO background bleeding into neighbors */
+
+    flex: 1 1 0 !important; /* default; overridden below */
   }
 
-  /* Anchor fills its li WITHOUT bleeding past separators */
+  /* Anchor fills its li cleanly */
   #header nav ul li a {
     flex: 1 1 auto !important;
     min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
 
     display: flex !important;
     align-items: center;
     justify-content: center;
 
-    padding: 0 1.25rem !important; /* keep symmetric; don’t inflate for DEMO */
+    padding: 0 1.25rem !important;
     text-align: center !important;
   }
 
@@ -57,13 +61,14 @@
   #header nav ul li:nth-child(2) {
     flex: 1.25 1 0 !important; /* DEMO gets more */
   }
+
   #header nav ul li:not(:nth-child(2)) {
     flex: 0.92 1 0 !important; /* others give up a bit */
   }
 
-  /* Keep the label comfortable (prevents “tight” look as tracking is wide) */
+  /* Keep DEMO label comfortable (prevents “tight” look) */
   #header nav ul li a[data-i18n="nav.demo"] {
-    letter-spacing: 0.06rem !important; /* tighter than the theme default */
-    font-size: 0.75rem !important;      /* optional; remove if you prefer */
+    letter-spacing: 0.06rem !important;
+    font-size: 0.75rem !important; /* optional; remove if you prefer */
   }
 }
