@@ -60,9 +60,9 @@
     letter-spacing: 0.05rem !important; /* try 0.06–0.10 */
     font-size: 0.74rem !important;      /* optional; keep if you like the look */
   }
-   /* More breathing room without changing tab widths
+   /* More breathing room without changing tab widths  */
   #header nav ul li a[data-i18n="nav.demo"] {
     letter-spacing: 0.05rem !important; 
     font-size: 0.74rem !important;
-  } */
+  }
 }
