@@ -53,7 +53,7 @@
       "demo.udg.lead": ,
 	  "demo.udg.download": ,
 
-      "pricing.intro": "We offer two licensing models: <b>perpetual (lifetime)</b> and <b>non-perpetual (subscription)</b>. Licenses are bound to a single computer. For use on multiple computers, please purchase a multi-license (minimum two). Multi-licenses may qualify for discounts—contact us to discuss. See the table below for current single-license prices (multi-license pricing differs).",
+      "pricing.intro": ,
       "pricing.tableTitle": "Product pricing",
       "pricing.th.name": "Name",
       "pricing.th.license": "License",
@@ -63,8 +63,8 @@
       "pricing.license.none": "None",
       "pricing.price.free": "FREE",
 
-      "contact.lead": "Use the embedded form below to contact us by email. We respond as quickly as possible.",
-      "contact.social": "You can also reach us on Twitter, Facebook, or Discord via the icons below.",
+      "contact.lead": ,
+      "contact.social": ,
       "footer.copyright": "© 2025 IT World Software Solutions"
     },
 
