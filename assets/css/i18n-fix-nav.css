@@ -83,4 +83,12 @@ html[lang="id"] #header nav ul li a {
     letter-spacing: 0.08rem !important;
     font-size: 0.75rem !important;
   }
+
+   /* Give DEMO more width; take a bit from the others */
+  #header nav ul li:nth-child(2) {
+    flex: 1.25 1 0 !important;
+  }
+  #header nav ul li:not(:nth-child(2)) {
+    flex: 0.92 1 0 !important;
+  }
 }
