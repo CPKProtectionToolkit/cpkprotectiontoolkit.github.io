@@ -45,28 +45,47 @@
 	<body class="is-preload">
 
 	<!-- Load Facebook SDK for JavaScript -->
-      <div id="fb-root"></div>
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v10.0'
-          });
-        };
+<a
+  href="https://m.me/CPKProtectionToolkit"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="messenger-fab icon brands fa-facebook-messenger"
+  aria-label="Chat on Messenger"
+>
+  <span class="label">Messenger</span>
+</a>
 
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+<style>
+  .messenger-fab{
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 10000;
 
-      <!-- Your Chat Plugin code -->
-      <div class="fb-customerchat"
-        attribution="setup_tool"
-        page_id="106083911575972">
-      </div>
+    width: 3.25rem;
+    height: 3.25rem;
+    line-height: 3.25rem;
+
+    text-align: center;
+    border-radius: 999px;
+
+    /* “Dimension”-style look: translucent + thin border */
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .messenger-fab:hover{
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.35);
+  }
+
+  .messenger-fab:active{
+    transform: translateY(1px);
+  }
+</style>
 		
 		<!-- Wrapper -->
 		<div id="wrapper">
@@ -360,6 +379,7 @@
 
 	</body>
 </html>
+
 
 
 
