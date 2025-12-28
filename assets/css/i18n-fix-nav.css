@@ -54,21 +54,4 @@
     padding: 0 1.25rem !important;
     text-align: center !important;
   }
-
-  /* ------------------------------------------------------------
-     OPTION B: Rebalance widths (DEMO wider, others slightly narrower)
-     ------------------------------------------------------------ */
-  #header nav ul li:nth-child(2) {
-    flex: 1.25 1 0 !important; /* DEMO gets more */
-  }
-
-  #header nav ul li:not(:nth-child(2)) {
-    flex: 0.92 1 0 !important; /* others give up a bit */
-  }
-
-  /* Keep DEMO label comfortable (prevents “tight” look) */
-  #header nav ul li a[data-i18n="nav.demo"] {
-    letter-spacing: 0.06rem !important;
-    font-size: 0.75rem !important; /* optional; remove if you prefer */
-  }
 }
