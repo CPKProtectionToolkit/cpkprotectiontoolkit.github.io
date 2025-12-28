@@ -1,94 +1,69 @@
 /* ==========================================================================
-   i18n nav fix for HTML5UP Dimension
-   Fixes long labels colliding with vertical separators and keeps labels centered.
-   This file must be loaded AFTER assets/css/main.css
+   i18n-fix-nav.css — Option B
+   Goal: give “DEMO & DOWNLOAD” more left/right breathing room by allocating
+         it more width and taking a little from the other tabs, without
+         breaking the existing layout/separators.
+   Load AFTER assets/css/main.css
    ========================================================================== */
 
-/* 1) Global: slightly reduce tracking + balance padding (helps long translations) */
+/* Base safety: prevent anchor sizing overflow issues */
 #header nav ul li a {
   box-sizing: border-box !important;
-
-  /* Override theme defaults that are too aggressive for long translations */
-  padding: 0 1.55rem !important;
-  letter-spacing: 0.16rem !important;
-  font-size: 0.78rem !important;
-
-  /* Defensive: prevent text painting into neighbors */
+  white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: clip !important;
-  white-space: nowrap !important;
 }
 
-/* 2) Spanish-specific: long labels need a bit more room */
-html[lang="es"] #header nav ul li a {
-  min-width: clamp(8.6rem, 12vw, 10.2rem) !important;
-  letter-spacing: 0.13rem !important;
-  font-size: 0.76rem !important;
-  padding: 0 1.65rem !important;
-}
-
-/* 3) Optional: Indonesian can also run long (kept mild). */
-html[lang="id"] #header nav ul li a {
-  letter-spacing: 0.14rem !important;
-}
-
-/* 4) Small screens: stacked nav; allow wrapping */
+/* Mobile: stacked nav, allow wrapping */
 @media screen and (max-width: 480px) {
   #header nav ul li a {
-    font-size: 0.80rem !important;
-    letter-spacing: 0.14rem !important;
-    padding: 0 1.25rem !important;
     white-space: normal !important;
-  }
-
-  html[lang="es"] #header nav ul li a {
-    min-width: 0 !important; /* don't force wide buttons when stacked */
-    padding: 0 1.25rem !important;
+    overflow: visible !important;
   }
 }
 
-/* 5) Desktop/tablet: equal-width segments + true centered labels WITHOUT overflow */
+/* Desktop/tablet: keep the nav as a clean flex row and center labels */
 @media screen and (min-width: 481px) {
   #header nav ul {
     display: flex !important;
     width: 100%;
-    max-width: 70rem; /* tweak if you want the whole bar narrower */
+    max-width: 70rem; /* adjust if you want the whole bar narrower/wider */
     margin: 0 auto;
   }
 
-  /* Each segment is a flex item */
+  /* Each tab is a flex item */
   #header nav ul li {
-    flex: 1 1 0 !important;
+    display: flex !important;
     min-width: 0 !important;
-    display: flex !important; /* lets the <a> stretch cleanly */
+    flex: 1 1 0 !important; /* default; Option B overrides below */
   }
 
-  /* <a> fills the li, but cannot “bleed” past separators */
+  /* Anchor fills its li WITHOUT bleeding past separators */
   #header nav ul li a {
     flex: 1 1 auto !important;
     min-width: 0 !important;
-    box-sizing: border-box !important;
 
     display: flex !important;
     align-items: center;
     justify-content: center;
 
-    padding: 0 1.25rem !important; /* symmetrical padding keeps centering correct */
+    padding: 0 1.25rem !important; /* keep symmetric; don’t inflate for DEMO */
     text-align: center !important;
-    white-space: nowrap !important;
   }
 
-  /* DEMO & DOWNLOAD: tighten tracking (and optionally size) so it fits comfortably */
-  #header nav ul li a[data-i18n="nav.demo"] {
-    letter-spacing: 0.08rem !important;
-    font-size: 0.75rem !important;
-  }
-
-   /* Give DEMO more width; take a bit from the others */
+  /* ------------------------------------------------------------
+     OPTION B: Rebalance widths (DEMO wider, others slightly narrower)
+     ------------------------------------------------------------ */
   #header nav ul li:nth-child(2) {
-    flex: 1.25 1 0 !important;
+    flex: 1.25 1 0 !important; /* DEMO gets more */
   }
   #header nav ul li:not(:nth-child(2)) {
-    flex: 0.92 1 0 !important;
+    flex: 0.92 1 0 !important; /* others give up a bit */
+  }
+
+  /* Keep the label comfortable (prevents “tight” look as tracking is wide) */
+  #header nav ul li a[data-i18n="nav.demo"] {
+    letter-spacing: 0.06rem !important; /* tighter than the theme default */
+    font-size: 0.75rem !important;      /* optional; remove if you prefer */
   }
 }
