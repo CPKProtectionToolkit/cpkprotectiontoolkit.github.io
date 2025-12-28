@@ -45,4 +45,11 @@
   outline-offset: 3px;
 }
 
-.paypal-icon { fill: currentColor; }
+.paypal-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
+  flex: 0 0 auto;
+  fill: currentColor;
+  opacity: 0.95;
+}
