@@ -51,44 +51,41 @@ html[lang="id"] #header nav ul li a {
 /* Equal-width nav buttons + true centered labels (desktop/tablet) */
 @media screen and (min-width: 481px) {
 
-  /* Make the bar a flex row */
   #header nav ul {
     display: flex !important;
     width: 100%;
-    max-width: 70rem;      /* tweak if you want the whole bar narrower */
+    max-width: 70rem;
     margin: 0 auto;
   }
 
-  /* Force equal-width segments */
+  /* Each segment is a flex item */
   #header nav ul li {
     flex: 1 1 0 !important;
-    min-width: 0 !important; /* override template min-width behavior */
+    min-width: 0 !important;
+    display: flex !important; /* make <a> able to stretch cleanly */
   }
 
-  /* Center label perfectly inside each segment */
+  /* <a> fills the li WITHOUT overflowing past separators */
   #header nav ul li a {
-    width: 100%;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+
     display: flex !important;
     align-items: center;
     justify-content: center;
 
-    /* keep padding symmetrical so centering is visually correct */
     padding: 0 1.25rem !important;
-
-    /* prevent wrapping while still staying centered */
     white-space: nowrap !important;
     text-align: center !important;
   }
 
-/* Wider DEMO button */
-  #header nav ul li:nth-child(2) {
-    flex: 1.8 1 0 !important;  /* try 1.6–1.9 */
+  /* Keep your DEMO label tweak (optional) */
+  #header nav ul li a[data-i18n="nav.demo"] {
+    letter-spacing: 0.08rem !important;
+    font-size: 0.75rem !important;
   }
 
-  /* Make the label fit by tightening tracking (don't add padding) */
-  #header nav ul li a[data-i18n="nav.demo"] {
-    padding: 0 1.25rem !important;       /* same as others */
-    letter-spacing: 0.08rem !important;  /* tighter than 0.12 */
-    font-size: 0.75rem !important;       /* optional, helps a lot */
-  }
+  /* If you want PERFECT symmetry, remove the wider DEMO rule. */
+  /* #header nav ul li:nth-child(2) { flex: 1.8 1 0 !important; } */
 }
