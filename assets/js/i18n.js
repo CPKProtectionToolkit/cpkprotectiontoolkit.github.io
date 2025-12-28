@@ -1,5 +1,15 @@
-// Replace ONLY the `translations` constant in i18n.js with this one:
-const translations = {
+(function () {
+  const STORAGE_KEY = "site_lang";
+
+  const LANGS = [
+    { code: "en", label: "English", short: "EN" },
+    { code: "es", label: "Español", short: "ES" },
+    { code: "id", label: "Bahasa Indonesia", short: "ID" },
+    { code: "zh-Hans", label: "中文（简体）", short: "中文" }
+  ];
+
+  // Same dictionary approach as before; only the selector implementation changed.
+  const translations = {
   "en": {
     "page.title": "CPK Protection Toolkit",
     "lang.label": "Language",
@@ -240,3 +250,124 @@ const translations = {
     "footer.copyright": "© 2025 IT World Software Solutions"
   }
 };
+
+
+  function normalizeLang(lang) {
+    if (!lang) return "en";
+    const l = String(lang).toLowerCase();
+    if (l.startsWith("es")) return "es";
+    if (l === "id" || l.startsWith("id-")) return "id";
+    if (l.startsWith("zh")) return "zh-Hans";
+    return "en";
+  }
+
+  function getSupportedLang(lang) {
+    return translations[lang] ? lang : "en";
+  }
+
+  function applyTranslations(lang) {
+    const dict = translations[lang] || translations.en;
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key] != null) el.textContent = dict[key];
+    });
+
+    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-html");
+      if (dict[key] != null) el.innerHTML = dict[key];
+    });
+
+    if (dict["page.title"]) document.title = dict["page.title"];
+    document.documentElement.lang = (lang === "zh-Hans") ? "zh-Hans" : lang;
+
+    // Update injected switcher badge + selection state
+    const short = (LANGS.find(x => x.code === lang) || LANGS[0]).short;
+    const codeEl = document.querySelector("#i18n-switcher .i18n-code");
+    if (codeEl) codeEl.textContent = short;
+
+    document.querySelectorAll("#i18n-switcher [data-lang]").forEach((btn) => {
+      btn.setAttribute("aria-current", btn.getAttribute("data-lang") === lang ? "true" : "false");
+    });
+  }
+
+  function setLanguage(lang) {
+    const resolved = getSupportedLang(lang);
+    localStorage.setItem(STORAGE_KEY, resolved);
+    applyTranslations(resolved);
+  }
+
+  function buildSwitcher() {
+    if (document.getElementById("i18n-switcher")) return;
+
+    const wrap = document.createElement("div");
+    wrap.id = "i18n-switcher";
+    wrap.setAttribute("aria-label", "Language selector");
+
+    wrap.innerHTML = `
+      <button type="button" class="i18n-btn" aria-haspopup="true" aria-expanded="false">
+        <svg class="i18n-globe" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M2 12h20" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M12 2c3.2 3 3.2 17 0 20" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M12 2c-3.2 3-3.2 17 0 20" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        <span class="i18n-code">EN</span>
+      </button>
+      <div class="i18n-menu" role="menu"></div>
+    `;
+
+    const menu = wrap.querySelector(".i18n-menu");
+    LANGS.forEach((l) => {
+      const item = document.createElement("button");
+      item.type = "button";
+      item.className = "i18n-item";
+      item.setAttribute("role", "menuitem");
+      item.setAttribute("data-lang", l.code);
+      item.innerHTML = `<span class="name">${l.label}</span><span class="meta">${l.short}</span>`;
+      item.addEventListener("click", () => {
+        setLanguage(l.code);
+        closeMenu();
+      });
+      menu.appendChild(item);
+    });
+
+    const btn = wrap.querySelector(".i18n-btn");
+
+    function openMenu() {
+      wrap.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+    }
+    function closeMenu() {
+      wrap.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+    function toggleMenu() {
+      if (wrap.classList.contains("open")) closeMenu();
+      else openMenu();
+    }
+
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.addEventListener("click", () => closeMenu());
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    document.body.appendChild(wrap);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    buildSwitcher();
+
+    const saved = localStorage.getItem(STORAGE_KEY);
+    const preferred = normalizeLang(navigator.language || navigator.userLanguage);
+    setLanguage(saved || preferred);
+  });
+})();
+
+
+
