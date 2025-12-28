@@ -80,14 +80,15 @@ html[lang="id"] #header nav ul li a {
     text-align: center !important;
   }
 
-    /* Make the 2nd button wider so the long label has space on both sides */
+/* Wider DEMO button */
   #header nav ul li:nth-child(2) {
-    flex: 1.35 1 0 !important; /* increase/decrease 1.35 to taste */
+    flex: 1.7 1 0 !important;  /* try 1.6–1.9 */
   }
-   
-  /* Optional: a little extra internal space + slightly tighter tracking */
+
+  /* Make the label fit by tightening tracking (don't add padding) */
   #header nav ul li a[data-i18n="nav.demo"] {
-    padding: 0 1.5rem !important;
-    letter-spacing: 0.12rem !important;
+    padding: 0 1.25rem !important;       /* same as others */
+    letter-spacing: 0.09rem !important;  /* tighter than 0.12 */
+    font-size: 0.75rem !important;       /* optional, helps a lot */
   }
 }
