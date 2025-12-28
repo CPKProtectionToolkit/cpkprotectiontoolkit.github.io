@@ -1,27 +1,27 @@
 /* ==========================================================================
    i18n nav fix for HTML5UP Dimension
-   Fixes Spanish (and other long labels) colliding with the vertical separators.
+   Fixes long labels colliding with vertical separators and keeps labels centered.
    This file must be loaded AFTER assets/css/main.css
    ========================================================================== */
 
-/* 1) Make the separator "feel" farther from text by balancing padding
-      and slightly reducing tracking for all languages. */
+/* 1) Global: slightly reduce tracking + balance padding (helps long translations) */
 #header nav ul li a {
-  /* Override theme defaults that are too aggressive for long translations */
-  padding: 0 1.55rem !important;         /* balanced L/R padding */
-  letter-spacing: 0.16rem !important;    /* was 0.2rem in main.css */
-  font-size: 0.78rem !important;         /* was 0.8rem in main.css */
+  box-sizing: border-box !important;
 
-  /* Defensive: ensure text never paints into neighboring li box */
+  /* Override theme defaults that are too aggressive for long translations */
+  padding: 0 1.55rem !important;
+  letter-spacing: 0.16rem !important;
+  font-size: 0.78rem !important;
+
+  /* Defensive: prevent text painting into neighbors */
   overflow: hidden !important;
   text-overflow: clip !important;
   white-space: nowrap !important;
 }
 
-/* 2) Spanish-specific: give each button a bit more guaranteed width,
-      and reduce tracking slightly more so DEMONSTRACIÓN fits comfortably. */
+/* 2) Spanish-specific: long labels need a bit more room */
 html[lang="es"] #header nav ul li a {
-  min-width: clamp(8.6rem, 12vw, 10.2rem) !important; /* was 7.5rem */
+  min-width: clamp(8.6rem, 12vw, 10.2rem) !important;
   letter-spacing: 0.13rem !important;
   font-size: 0.76rem !important;
   padding: 0 1.65rem !important;
@@ -32,29 +32,27 @@ html[lang="id"] #header nav ul li a {
   letter-spacing: 0.14rem !important;
 }
 
-/* 4) Small screens: the theme switches to vertical at 480px already.
-      We just keep typography sane there. */
+/* 4) Small screens: stacked nav; allow wrapping */
 @media screen and (max-width: 480px) {
   #header nav ul li a {
     font-size: 0.80rem !important;
     letter-spacing: 0.14rem !important;
     padding: 0 1.25rem !important;
-    white-space: normal !important; /* safe when stacked */
+    white-space: normal !important;
   }
 
   html[lang="es"] #header nav ul li a {
-    min-width: 0 !important; /* theme sets width:100% in stacked mode */
+    min-width: 0 !important; /* don't force wide buttons when stacked */
     padding: 0 1.25rem !important;
   }
 }
 
-/* Equal-width nav buttons + true centered labels (desktop/tablet) */
+/* 5) Desktop/tablet: equal-width segments + true centered labels WITHOUT overflow */
 @media screen and (min-width: 481px) {
-
   #header nav ul {
     display: flex !important;
     width: 100%;
-    max-width: 70rem;
+    max-width: 70rem; /* tweak if you want the whole bar narrower */
     margin: 0 auto;
   }
 
@@ -62,10 +60,10 @@ html[lang="id"] #header nav ul li a {
   #header nav ul li {
     flex: 1 1 0 !important;
     min-width: 0 !important;
-    display: flex !important; /* make <a> able to stretch cleanly */
+    display: flex !important; /* lets the <a> stretch cleanly */
   }
 
-  /* <a> fills the li WITHOUT overflowing past separators */
+  /* <a> fills the li, but cannot “bleed” past separators */
   #header nav ul li a {
     flex: 1 1 auto !important;
     min-width: 0 !important;
@@ -75,17 +73,20 @@ html[lang="id"] #header nav ul li a {
     align-items: center;
     justify-content: center;
 
-    padding: 0 1.25rem !important;
-    white-space: nowrap !important;
+    padding: 0 1.25rem !important; /* symmetrical padding keeps centering correct */
     text-align: center !important;
+    white-space: nowrap !important;
   }
 
-  /* Keep your DEMO label tweak (optional) */
+  /* DEMO & DOWNLOAD: tighten tracking (and optionally size) so it fits comfortably */
   #header nav ul li a[data-i18n="nav.demo"] {
     letter-spacing: 0.08rem !important;
     font-size: 0.75rem !important;
   }
 
-  /* If you want PERFECT symmetry, remove the wider DEMO rule. */
-  /* #header nav ul li:nth-child(2) { flex: 1.8 1 0 !important; } */
+  /* If you *want* DEMO to be wider than the others, uncomment:
+  #header nav ul li:nth-child(2) {
+    flex: 1.7 1 0 !important;
+  }
+  */
 }
