@@ -65,6 +65,9 @@
     "pricing.license.none": "None",
     "pricing.price.free": "FREE",
 
+    "buy.withPayPal.info": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> To purchase any of the products listed above, click the <b>BUY WITH PAYPAL</b> button below. On the purchase details page, enter the name of the app you want in the <u>Description</u> field, and enter the corresponding amount from the table in the <u>Price per item field</u>.",
+    "buy.withPayPal.button": "Buy with PayPal",
+
     "contact.lead": "Use the below contact form if you want to contact us on e-mail. We will answer as soon as possible.",
     "contact.social": "You can find us on Twitter, Facebook or Discord by clicking the below icons corresponding to each social network.",
     "footer.copyright": "© 2025 IT World Software Solutions"
@@ -125,6 +128,9 @@
     "pricing.license.none": "Ninguna",
     "pricing.price.free": "GRATIS",
 
+    "buy.withPayPal.info": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> Para comprar cualquiera de los productos listados arriba, haga clic en el botón <b>COMPRAR CON PAYPAL</b> de abajo. En la página de detalles de la compra, introduzca el nombre de la aplicación que desea en el campo <u>Descripción</u> e introduzca el importe correspondiente de la tabla en el campo <u>Precio por artículo</u>.",
+    "buy.withPayPal.button": "Comprar con PayPal",
+    
     "contact.lead": "Use el formulario de contacto de abajo si desea contactarnos por correo electrónico. Responderemos lo antes posible.",
     "contact.social": "Puede encontrarnos en Twitter, Facebook o Discord haciendo clic en los iconos de abajo correspondientes a cada red social.",
     "footer.copyright": "© 2025 IT World Software Solutions"
@@ -185,6 +191,9 @@
     "pricing.license.none": "Tidak ada",
     "pricing.price.free": "GRATIS",
 
+    "buy.withPayPal.info": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> Untuk membeli salah satu produk yang tercantum di atas, klik tombol <b>BELI DENGAN PAYPAL</b> di bawah. Pada halaman detail pembelian, masukkan nama aplikasi yang Anda inginkan pada kolom <u>Deskripsi</u>, lalu masukkan jumlah yang sesuai dari tabel pada kolom <u>Harga per item</u>.",
+    "buy.withPayPal.button": "Beli dengan PayPal",
+    
     "contact.lead": "Gunakan formulir kontak di bawah ini jika Anda ingin menghubungi kami melalui email. Kami akan menjawab secepat mungkin.",
     "contact.social": "Anda dapat menemukan kami di Twitter, Facebook, atau Discord dengan mengklik ikon di bawah sesuai dengan masing-masing jejaring sosial.",
     "footer.copyright": "© 2025 IT World Software Solutions"
@@ -235,7 +244,7 @@
     "demo.udg.lead": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> 观看上方视频，了解 Universal DpFileList Generator 的实际效果。",
     "demo.udg.download": "<span style=\"font-family:'Segoe UI Symbol'; color:#ff0000\">🌐</span> 下载：<a href=\"https://github.com/CPKProtectionToolkit/udg/\" target=\"_blank\">https://github.com/CPKProtectionToolkit/udg/</a>",
 
-    "pricing.intro": "提供两种许可类型：<b>永久许可</b><i>（终身）</i> 与 <b>非永久许可</b><i>（订阅）</i>。许可仅绑定一台电脑使用。这意味着您不能购买一份许可并在多台电脑上使用。如需在多台电脑上使用某个应用，您需要购买 <b>多许可（multilicense）</b>。购买多许可时，单个应用至少需要购买 2 份许可；这也会解锁一些可协商的折扣。请查看下表了解当前价格。请注意：这些价格适用于 <b>单许可</b>，不适用于 <b>多许可</b>。",
+    "pricing.intro": "提供两种许可类型：<b>永久许可</b><i>（终身）</i> 与 <b>非永久许可</b><i>（订阅）</i>。许可仅绑定一台电脑使用。这意味着您不能购买一份许可并在多台电脑上使用。如需在多台电脑上使用某个应用，您需要购买 <b>多许可（批量许可证）</b>。购买多许可时，单个应用至少需要购买 2 份许可；这也会解锁一些可协商的折扣。请查看下表了解当前价格。请注意：这些价格适用于 <b>单许可</b>，不适用于 <b>多许可</b>。",
     "pricing.tableTitle": "产品价格",
     "pricing.th.name": "名称",
     "pricing.th.license": "许可",
@@ -245,6 +254,9 @@
     "pricing.license.none": "无",
     "pricing.price.free": "免费",
 
+    "buy.withPayPal.info": "<span style=\"font-family:'Segoe UI Emoji'; color:#004dbb\">ℹ️</span> 要购买上述任何产品，请点击下方的 <b>使用 PayPal 购买</b> 按钮。在购买详情页面中，请在 <u>描述</u> 字段填写您想要的应用名称，并在 <u>单价</u> 字段填写表格中对应的金额。",
+    "buy.withPayPal.button": "使用 PayPal 购买",
+    
     "contact.lead": "如需通过电子邮件联系，请使用下方联系表单。我们会尽快回复。",
     "contact.social": "您也可以点击下方对应图标，在 Twitter、Facebook 或 Discord 上找到我们。",
     "footer.copyright": "© 2025 IT World Software Solutions"
@@ -278,6 +290,20 @@
       if (dict[key] != null) el.innerHTML = dict[key];
     });
 
+    // Translate attributes (e.g. aria-label, placeholder) using a spec like:
+    // data-i18n-attr="aria-label:buy.withPayPal.button,placeholder:search.placeholder"
+    document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+      const spec = el.getAttribute("data-i18n-attr");
+      if (!spec) return;
+      spec.split(",").map(s => s.trim()).filter(Boolean).forEach((pair) => {
+        const parts = pair.split(":").map(s => s.trim());
+        if (parts.length !== 2) return;
+        const attr = parts[0];
+        const key = parts[1];
+        if (dict[key] != null) el.setAttribute(attr, dict[key]);
+      });
+    });
+    
     if (dict["page.title"]) document.title = dict["page.title"];
     document.documentElement.lang = (lang === "zh-Hans") ? "zh-Hans" : lang;
 
