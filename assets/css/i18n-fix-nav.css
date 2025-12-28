@@ -54,4 +54,10 @@
     padding: 0 1.25rem !important;
     text-align: center !important;
   }
+
+   /* More breathing room without changing tab widths */
+  #header nav ul li a[data-i18n="nav.demo"] {
+    letter-spacing: 0.05rem !important; /* was 0.08 */
+    font-size: 0.74rem !important;      /* was 0.75 (optional) */
+  }
 }
