@@ -82,13 +82,13 @@ html[lang="id"] #header nav ul li a {
 
 /* Wider DEMO button */
   #header nav ul li:nth-child(2) {
-    flex: 1.7 1 0 !important;  /* try 1.6–1.9 */
+    flex: 1.8 1 0 !important;  /* try 1.6–1.9 */
   }
 
   /* Make the label fit by tightening tracking (don't add padding) */
   #header nav ul li a[data-i18n="nav.demo"] {
     padding: 0 1.25rem !important;       /* same as others */
-    letter-spacing: 0.09rem !important;  /* tighter than 0.12 */
+    letter-spacing: 0.08rem !important;  /* tighter than 0.12 */
     font-size: 0.75rem !important;       /* optional, helps a lot */
   }
 }
