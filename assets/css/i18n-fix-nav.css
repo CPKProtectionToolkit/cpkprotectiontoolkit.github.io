@@ -84,9 +84,8 @@ html[lang="id"] #header nav ul li a {
     font-size: 0.75rem !important;
   }
 
-  /* If you *want* DEMO to be wider than the others, uncomment:
+  /* If you *want* DEMO to be wider than the others, uncomment:*/
   #header nav ul li:nth-child(2) {
     flex: 1.7 1 0 !important;
   }
-  */
 }
