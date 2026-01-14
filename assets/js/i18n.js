@@ -70,7 +70,7 @@
 
     "contact.lead": "Use the below contact form if you want to contact us on e-mail. We will answer as soon as possible.",
     "contact.social": "You can find us on Twitter, Facebook or Discord by clicking the below icons corresponding to each social network.",
-    "footer.copyright": "© 2025 IT World Software Solutions"
+    "footer.copyright": "© 2026 IT World Software Solutions"
   },
 
   "es": {
@@ -133,7 +133,7 @@
     
     "contact.lead": "Use el formulario de contacto de abajo si desea contactarnos por correo electrónico. Responderemos lo antes posible.",
     "contact.social": "Puede encontrarnos en Twitter, Facebook o Discord haciendo clic en los iconos de abajo correspondientes a cada red social.",
-    "footer.copyright": "© 2025 IT World Software Solutions"
+    "footer.copyright": "© 2026 IT World Software Solutions"
   },
 
   "id": {
@@ -196,7 +196,7 @@
     
     "contact.lead": "Gunakan formulir kontak di bawah ini jika Anda ingin menghubungi kami melalui email. Kami akan menjawab secepat mungkin.",
     "contact.social": "Anda dapat menemukan kami di Twitter, Facebook, atau Discord dengan mengklik ikon di bawah sesuai dengan masing-masing jejaring sosial.",
-    "footer.copyright": "© 2025 IT World Software Solutions"
+    "footer.copyright": "© 2026 IT World Software Solutions"
   },
 
   "zh-Hans": {
@@ -259,7 +259,7 @@
     
     "contact.lead": "如需通过电子邮件联系，请使用下方联系表单。我们会尽快回复。",
     "contact.social": "您也可以点击下方对应图标，在 Twitter、Facebook 或 Discord 上找到我们。",
-    "footer.copyright": "© 2025 IT World Software Solutions"
+    "footer.copyright": "© 2026 IT World Software Solutions"
   }
 };
 
