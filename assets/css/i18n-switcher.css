@@ -1,0 +1,113 @@
+/* Floating language switcher: visible on every page */
+#i18n-switcher {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10000;
+  font-family: inherit;
+}
+
+#i18n-switcher .i18n-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+  color: inherit;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(8px);
+}
+
+#i18n-switcher .i18n-btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 2px;
+}
+
+#i18n-switcher .i18n-globe {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+#i18n-switcher .i18n-code {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 12px;
+}
+
+#i18n-switcher .i18n-menu {
+  margin-top: 8px;
+  min-width: 260px; /* slightly wider to accommodate longer names */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  display: none;
+}
+
+#i18n-switcher.open .i18n-menu {
+  display: block;
+}
+
+#i18n-switcher .i18n-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+
+  /* Key change: ensure consistent spacing between name and code */
+  gap: 16px;
+}
+
+#i18n-switcher .i18n-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#i18n-switcher .i18n-item[aria-current="true"] {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Key change: let the name take remaining space */
+#i18n-switcher .i18n-item .name {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 13px;
+}
+
+/* Key change: make the right code column wider and right-aligned */
+#i18n-switcher .i18n-item .meta {
+  flex: 0 0 auto;
+  min-width: 44px;     /* creates visible separation (BAHASA INDONESIA ... ID) */
+  text-align: right;
+  opacity: 0.85;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  #i18n-switcher {
+    top: 10px;
+    right: 10px;
+  }
+
+  #i18n-switcher .i18n-menu {
+    min-width: 250px;
+  }
+
+  #i18n-switcher .i18n-item {
+    gap: 18px; /* slightly larger on small screens */
+  }
+
+  #i18n-switcher .i18n-item .meta {
+    min-width: 52px; /* more breathing room on mobile */
+  }
+}

@@ -1,0 +1,179 @@
+/* Center it nicely under the table (optional) */
+#pricing form {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+/* Modern “glass” CTA button that will fit dark/blur themes well */
+.paypal-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 0.9rem 1.15rem;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.paypal-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.paypal-btn:active {
+  transform: translateY(1px);
+}
+
+.paypal-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 3px;
+}
+
+.paypal-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
+  flex: 0 0 auto;
+  fill: currentColor;
+  opacity: 0.95;
+}
+
+
+/* Pricing cards */
+/*
+  Desktop layout requirement:
+  - Left column: CPK Protection Toolkit, ULTIMATE CPK Unlocker, Universal DpFileList Generator
+  - Right column: PES Protection Toolkit
+*/
+.pricing-grid{
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Split layout used on Pricing page */
+.pricing-grid.pricing-grid-split{
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 980px){
+  .pricing-grid.pricing-grid-split{
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.pricing-col{
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pricing-card{
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 1.1rem 1.1rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.pricing-card.featured{
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pricing-card h4{
+  margin: 0 0 0.35rem 0;
+}
+
+.pricing-badge{
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 0.6rem;
+}
+
+.pricing-option{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.pricing-card .pricing-option:first-of-type{
+  border-top: 0;
+}
+
+/* Pricing option with multi-line details (features, etc.) */
+.pricing-option.detailed{
+  align-items: flex-start;
+}
+
+.pricing-features{
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.pricing-features li{
+  margin: 0.15rem 0;
+}
+
+.pricing-label{
+  font-weight: 600;
+}
+
+.pricing-price{
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pricing-unit{
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.pricing-meta{
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.pricing-notes{
+  margin-top: 1.25rem;
+}
+
+.pricing-notes p{
+  margin-bottom: 0.75rem;
+}
+
+.pricing-notes code{
+  padding: 0.1rem 0.35rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+}
